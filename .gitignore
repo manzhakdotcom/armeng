@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 /.idea
+Nginx-1.8_vhost.conf
 .env
 .env.backup
 .phpunit.result.cache
