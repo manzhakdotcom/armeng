@@ -11,8 +11,5 @@
 |
 */
 
-Route::get('/{any}', function () {
-    return view('home');
-})->where('any', '.*');
 
-//Route::get('/', 'StationController@index');
+Route::get('/stations', 'StationController@index');

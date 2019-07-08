@@ -23,18 +23,30 @@
 </template>
 
 <script>
-  export default {
-      data() {
-        return {
-          stations: []
+    export default {
+        data() {
+            return {
+                stations: [],
+                tableShow: {
+                    showdata: true,
+                }
+            }
+        },
+        methods: {
+            getStations() {
+                axios.get('/stations/', {params: this.tableShow})
+                    .then(response => {
+                        console.log('The data: ', response.data)
+                        this.stations = response.data;
+                    })
+                    .catch(errors => {
+                        console.log(errors);
+                    });
+            }
+
+        },
+        computed: {
+
         }
-      },
-      created() {
-      let uri = '/api/stations';
-      this.axios.get(uri).then(response => {
-        this.stations = response.data.data;
-        console.log(this.stations);
-      });
-    }
-  }
+    };
 </script>
