@@ -13,6 +13,7 @@ class StationController extends Controller
     public function index()
     {
       return Station::all();
+
     }
 
 }

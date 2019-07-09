@@ -11,5 +11,4 @@
 |
 */
 
-
-Route::get('/stations', 'StationController@index');
+Route::view('/', 'home');
